@@ -5,13 +5,10 @@
   <img alt="ipadmode: an iPad as the only display of a remote Mac" src="docs/assets/hero-light.svg" width="100%">
 </picture>
 
-<p>
-  <img alt="macOS 27" src="https://img.shields.io/badge/macOS-27-111827?logo=apple&logoColor=white">
-  <img alt="Swift 6" src="https://img.shields.io/badge/Swift-6-F05138?logo=swift&logoColor=white">
-  <img alt="Apple Silicon" src="https://img.shields.io/badge/Apple%20Silicon-arm64-2f6fed">
-  <img alt="408 tests" src="https://img.shields.io/badge/tests-408%20passing-1f9d63">
-  <img alt="No dependencies" src="https://img.shields.io/badge/dependencies-none-6d5cf0">
-</p>
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="docs/assets/badges-dark.svg">
+  <img alt="macOS 27 · Swift 6 · Apple Silicon · 408 tests passing · no dependencies" src="docs/assets/badges-light.svg">
+</picture>
 
 </div>
 
