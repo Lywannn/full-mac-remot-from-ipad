@@ -191,3 +191,7 @@ docs/research/       spike results and acceptance notes
 ## A note on private APIs
 
 ipadmode depends on undocumented macOS APIs (`CGVirtualDisplay`, `SLSConfigureDisplayEnabled` and a few others). They can change with any update. The tool is built to fail safe when that happens, but keep it on a machine you can reach physically, at least until you've watched it recover once.
+
+## License
+
+[MIT](LICENSE)
