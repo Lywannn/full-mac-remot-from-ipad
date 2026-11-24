@@ -1,0 +1,38 @@
+#!/bin/bash
+# Swift wrapper for this repo. The project lives on an exFAT volume, where
+# SwiftPM builds are unreliable, so build products always go to the internal
+# APFS disk. `test` builds tests first: with Command Line Tools only, a plain
+# `swift test` from a clean build fails to load the TestingMacros plugin, and
+# the first test build after a source change sometimes hits the same error;
+# such builds are retried up to five attempts in total.
+#
+#   scripts/sw build [swift build args...]
+#   scripts/sw test  [swift test args...]     e.g. scripts/sw test --filter ConfigTests
+#   scripts/sw run   <product> [args...]
+#   scripts/sw bin-path [-c release]          prints the products directory
+set -euo pipefail
+SCRATCH="${IPADMODE_SCRATCH:-$HOME/Library/Caches/ipadmode-build}"
+cd "$(dirname "$0")/.."
+
+build_tests() {
+  local log status attempt
+  log="$(mktemp -t ipadmode-sw)"
+  for attempt in 1 2 3 4 5; do
+    status=0
+    swift build --scratch-path "$SCRATCH" --build-tests 2>&1 | tee "$log" || status=$?
+    if [ "$status" -eq 0 ] || ! grep -q "TestingMacros" "$log"; then break; fi
+    echo "scripts/sw: TestingMacros plugin flake on attempt $attempt (known CLT issue) — retrying" >&2
+  done
+  rm -f "$log"
+  return "$status"
+}
+
+cmd="${1:?usage: scripts/sw build|test|run|bin-path [args...]}"; shift
+case "$cmd" in
+  # IPADMODE_BIN defaults to the ipadmode binary just built, so the dry-run lifecycle tests (which run the real
+  # binary without creating a display) always run. Display-changing tests stay gated by their own variables.
+  test)     build_tests && IPADMODE_BIN="${IPADMODE_BIN:-$(swift build --scratch-path "$SCRATCH" --show-bin-path)/ipadmode}" \
+              swift test --scratch-path "$SCRATCH" --skip-build "$@" ;;
+  bin-path) swift build --scratch-path "$SCRATCH" --show-bin-path "$@" ;;
+  *)        swift "$cmd" --scratch-path "$SCRATCH" "$@" ;;
+esac

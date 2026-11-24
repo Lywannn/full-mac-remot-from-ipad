@@ -1,0 +1,7 @@
+/usr/libexec/replayd :: com.apple.backboardd.virtualDisplay com.apple.coremedia.virtualdisplay.allow com.apple.coremedia.virtualdisplaysession 
+/usr/libexec/AirPlayXPCHelper :: com.apple.coremedia.virtualdisplaycg.allow 
+/usr/libexec/avconferenced :: com.apple.coremedia.virtualdisplaycg.allow 
+/System/Library/CoreServices/AirPlayUIAgent.app/Contents/MacOS/AirPlayUIAgent :: com.apple.VirtualDisplay 
+/System/Library/CoreServices/RemoteManagement/ScreensharingAgent.bundle/Contents/MacOS/ScreensharingAgent :: com.apple.private.SkyLight.virtualdisplay 
+/System/Library/PrivateFrameworks/AirPlaySenderKit.framework/Versions/A/XPCServices/AirPlaySenderService.xpc/Contents/MacOS/AirPlaySenderService :: com.apple.coremedia.virtualdisplay.allow 
+scan complete

@@ -1,0 +1,109 @@
+online=2 active=2 main=1
+
+### display 1
+  main=true builtin=false active=true online=true asleep=false inMirrorSet=false mirrorsDisplay=0
+  vendor=0x30ae model=0x68f6 serialNonZero=no uuidPresent=yes
+  mode: 3440x1440 pt, 3440x1440 px, 240.0 Hz, ioModeID=128
+  bounds=(0.0, 0.0, 3440.0, 1440.0)
+  CoreDisplay info keys (45):
+    CGDisplayCADeviceName = <redacted>
+    DisplayBluePointX = 0.1464844
+    DisplayBluePointY = 0.06152344
+    DisplayBundleURL = /System/Library/Displays
+    DisplayDPICutoff = 300
+    DisplayDynamicGeometryEnabled = 0
+    DisplayFontAntialiasingFlags = 0
+    DisplayGreenPointX = 0.2509766
+    DisplayGreenPointY = 0.6445312
+    DisplayHorizontalImageSize = 800
+    DisplayIsExclusive = 0
+    DisplayIsSLVDExclusive = 0
+    DisplayProductID = 26870
+    DisplayProductName = <redacted>
+    DisplayRedPointX = 0.6904297
+    DisplayRedPointY = 0.3056641
+    DisplaySerialNumber = <redacted>
+    DisplaySupportsDynamicGeometry = 0
+    DisplaySupportsTouch = 0
+    DisplaySupportsUnderscan = 0
+    DisplayTechnologyType = 0
+    DisplayVendorID = 12462
+    DisplayVerticalImageSize = 340
+    DisplayWeekManufacture = <redacted>
+    DisplayWhiteGamma = 2.199997
+    DisplayWhitePointX = 0.3134766
+    DisplayWhitePointY = 0.3291016
+    DisplayYearManufacture = <redacted>
+    IODisplayIsDigital = 1
+    IODisplayLocation = IOService:/AppleARMPE/arm-io@10F00000/AppleH16GFamilyIO/dispext0@84000000/IOMobileFramebuf…
+    display-icon = public.display
+    kCGDisplayID = 1
+    kCGDisplayIsAirPlay = 0
+    kCGDisplayIsDFR = 0
+    kCGDisplayIsHydraDestinationDisplay = 0
+    kCGDisplayIsHydraSourceDisplay = 0
+    kCGDisplayIsPresentationDisplay = 0
+    kCGDisplayIsPresentationModeEnabled = 0
+    kCGDisplayIsVirtualDevice = 0
+    kCGDisplayPixelHeight = 1440
+    kCGDisplayPixelWidth = 3440
+    kCGDisplaySupportsRotation = 1
+    kCGDisplayUUID = <redacted>
+    kDisplayTransportType = 1
+    slopeLimitGamma = 1
+
+### display 3
+  main=false builtin=false active=true online=true asleep=false inMirrorSet=false mirrorsDisplay=0
+  vendor=0x61a9 model=0xb016 serialNonZero=no uuidPresent=yes
+  mode: 1920x1080 pt, 1920x1080 px, 100.0 Hz, ioModeID=58
+  bounds=(-1920.0, -326.0, 1920.0, 1080.0)
+  CoreDisplay info keys (45):
+    CGDisplayCADeviceName = <redacted>
+    DisplayBluePointX = 0.1513672
+    DisplayBluePointY = 0.05566406
+    DisplayBundleURL = /System/Library/Displays
+    DisplayDPICutoff = 300
+    DisplayDynamicGeometryEnabled = 0
+    DisplayFontAntialiasingFlags = 0
+    DisplayGreenPointX = 0.3105469
+    DisplayGreenPointY = 0.6054688
+    DisplayHorizontalImageSize = 530
+    DisplayIsExclusive = 0
+    DisplayIsSLVDExclusive = 0
+    DisplayProductID = 45078
+    DisplayProductName = <redacted>
+    DisplayRedPointX = 0.6484375
+    DisplayRedPointY = 0.3339844
+    DisplaySerialNumber = <redacted>
+    DisplaySupportsDynamicGeometry = 0
+    DisplaySupportsTouch = 0
+    DisplaySupportsUnderscan = 0
+    DisplayTechnologyType = 0
+    DisplayVendorID = 25001
+    DisplayVerticalImageSize = 300
+    DisplayWeekManufacture = <redacted>
+    DisplayWhiteGamma = 2.199997
+    DisplayWhitePointX = 0.3076172
+    DisplayWhitePointY = 0.3037109
+    DisplayYearManufacture = <redacted>
+    IODisplayIsDigital = 1
+    IODisplayLocation = IOService:/AppleARMPE/arm-io@10F00000/AppleH16GFamilyIO/dispext1@88000000/IOMobileFramebuf…
+    display-icon = public.display
+    kCGDisplayID = 3
+    kCGDisplayIsAirPlay = 0
+    kCGDisplayIsDFR = 0
+    kCGDisplayIsHydraDestinationDisplay = 0
+    kCGDisplayIsHydraSourceDisplay = 0
+    kCGDisplayIsPresentationDisplay = 0
+    kCGDisplayIsPresentationModeEnabled = 0
+    kCGDisplayIsVirtualDevice = 0
+    kCGDisplayPixelHeight = 1080
+    kCGDisplayPixelWidth = 1920
+    kCGDisplaySupportsRotation = 1
+    kCGDisplayUUID = <redacted>
+    kDisplayTransportType = 1
+    slopeLimitGamma = 1
+
+### NSScreen
+  screen id=1 frame=(0.0, 0.0, 3440.0, 1440.0) backingScale=1.0 maxFPS=240 deviceDescKeys=["NSDeviceBitsPerSample", "NSDeviceColorSpaceName", "NSDeviceIsScreen", "NSDeviceResolution", "NSDeviceSize", "NSScreenNumber"]
+  screen id=3 frame=(-1920.0, 686.0, 1920.0, 1080.0) backingScale=1.0 maxFPS=100 deviceDescKeys=["NSDeviceBitsPerSample", "NSDeviceColorSpaceName", "NSDeviceIsScreen", "NSDeviceResolution", "NSDeviceSize", "NSScreenNumber"]

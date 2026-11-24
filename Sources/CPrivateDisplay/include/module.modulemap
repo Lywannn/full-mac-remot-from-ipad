@@ -1,0 +1,4 @@
+module CPrivateDisplay {
+    header "IPMPrivateDisplay.h"
+    export *
+}

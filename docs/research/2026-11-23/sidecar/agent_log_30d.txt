@@ -1,0 +1,27 @@
+Timestamp               Ty Process[PID:TID]
+2026-11-22 10:33:02.173 Df SidecarDisplayAgent[15085:578163] [com.apple.sidecar:display] === Sidecar Connect IDS <id> (PID 1001) ===
+2026-11-22 10:33:02.195 Df SidecarDisplayAgent[15085:578163] [com.apple.sidecar:display] === Sidecar Started Mac16,10 IDS <id> -> iPad13,16 IDS <id> ===
+2026-11-22 10:33:02.195 Df SidecarDisplayAgent[15085:578163] [com.apple.sidecar:display] === Sidecar Session <UUID> ===
+2026-11-22 10:33:03.798 Df SidecarDisplayAgent[15085:578163] [com.apple.sidecar:display] === Sidecar-400.42 <-> Sidecar-400.42 ===
+2026-11-22 10:33:04.270 Df SidecarDisplayAgent[15085:578163] [com.apple.sidecar:display] === Sidecar Connected IDS <id> [AWDL] ===
+2026-11-22 10:33:04.889 Df SidecarDisplayAgent[15085:578163] [com.apple.sidecar:display] === Display Hardware Changed ===
+2026-11-22 10:33:04.896 Df SidecarDisplayAgent[15085:578163] [com.apple.sidecar:display] === Virtual Display Configuration Complete ===
+2026-11-22 12:37:42.861 Df SidecarDisplayAgent[15085:578163] [com.apple.sidecar:display] === SideCar Session didClose ===
+2026-11-22 12:37:42.914 Df SidecarDisplayAgent[15085:578163] [com.apple.sidecar:display] === Sidecar Started Mac16,10 IDS <id> -> iPad13,16 IDS <id> ===
+2026-11-22 12:37:42.914 Df SidecarDisplayAgent[15085:578163] [com.apple.sidecar:display] === Sidecar Session <UUID> ===
+2026-11-22 12:37:42.914 Df SidecarDisplayAgent[15085:578163] [com.apple.sidecar:display] === Sidecar Reconnecting to iPad13,16 IDS <id> (1) ===
+2026-11-22 12:37:43.138 Df SidecarDisplayAgent[15085:578163] [com.apple.sidecar:display] IDS <id> Reconnected in 0.001 seconds
+2026-11-22 12:37:43.141 Df SidecarDisplayAgent[15085:578163] [com.apple.sidecar:display] === Sidecar Session 48dbf069 Ended iPad13,16 IDS <id> ===
+2026-11-22 12:37:44.522 Df SidecarDisplayAgent[15085:578163] [com.apple.sidecar:display] === SideCar Session didClose ===
+2026-11-22 12:37:44.526 Df SidecarDisplayAgent[15085:578163] [com.apple.sidecar:display] === Idle Exit Requested ===
+2026-11-22 12:37:44.575 Df SidecarDisplayAgent[15085:578163] [com.apple.sidecar:display] === Display Hardware Changed ===
+2026-11-22 12:37:45.526 Df SidecarDisplayAgent[15085:578163] [com.apple.sidecar:display] === Idle Exit ===
+2026-11-23 02:25:12.292 Df SidecarDisplayAgent[41032:6d270a] [com.apple.sidecar:display] === Display Sleep ===
+2026-11-23 02:25:12.292 Df SidecarDisplayAgent[41032:6d270a] [com.apple.sidecar:display] === Display Sleep: true ===
+2026-11-23 11:21:51.577 Df SidecarDisplayAgent[41032:6d270a] [com.apple.sidecar:display] === Display Wake ===
+2026-11-23 11:21:51.577 Df SidecarDisplayAgent[41032:6d270a] [com.apple.sidecar:display] === Display Sleep: false ===
+2026-11-23 11:21:51.597 Df SidecarDisplayAgent[41032:6d270a] [com.apple.sidecar:display] === Display Hardware Changed ===
+2026-11-23 11:21:52.590 Df SidecarDisplayAgent[41032:6d270a] [com.apple.sidecar:display] === Display Hardware Changed ===
+2026-11-23 11:21:53.832 Df SidecarDisplayAgent[41032:6d270a] [com.apple.sidecar:display] === Display Hardware Changed ===
+2026-11-23 11:21:55.321 Df SidecarDisplayAgent[41032:6d270a] [com.apple.sidecar:display] === Display Hardware Changed ===
+2026-11-23 11:21:57.215 Df SidecarDisplayAgent[41032:6d270a] [com.apple.sidecar:display] === Display Hardware Changed ===

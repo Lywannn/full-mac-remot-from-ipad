@@ -1,0 +1,328 @@
+dlopen OK   /System/Library/Frameworks/CoreGraphics.framework/CoreGraphics
+dlopen OK   /System/Library/PrivateFrameworks/SkyLight.framework/SkyLight
+dlopen OK   /System/Library/Frameworks/CoreDisplay.framework/CoreDisplay
+dlopen FAIL /System/Library/PrivateFrameworks/CoreDisplay.framework/CoreDisplay: dlopen(/System/Library/PrivateFrameworks/CoreDisplay.framework/CoreDisplay, 0x0001): tried: '/System/Library/PrivateFrameworks/CoreDisplay.framework/CoreDisplay' (no such file), '/System/Volumes/Preboot/Cryptexes/OS/System/Library/PrivateFrameworks/CoreDisplay.framework/CoreDisplay' (no such file), '/System/Library/PrivateFrameworks/CoreDisplay.framework/CoreDisplay' (no such file, not in dyld cache)
+dlsym CGSConfigureDisplayEnabled FOUND  /System/Library/PrivateFrameworks/SkyLight.framework/Versions/A/SkyLight
+dlsym SLSConfigureDisplayEnabled FOUND  /System/Library/PrivateFrameworks/SkyLight.framework/Versions/A/SkyLight
+dlsym CGSCompleteDisplayConfiguration FOUND  /System/Library/PrivateFrameworks/SkyLight.framework/Versions/A/SkyLight
+dlsym SLSCompleteDisplayConfiguration FOUND  /System/Library/PrivateFrameworks/SkyLight.framework/Versions/A/SkyLight
+dlsym SLSCompleteDisplayConfigurationWithOption FOUND  /System/Library/PrivateFrameworks/SkyLight.framework/Versions/A/SkyLight
+dlsym CGSBeginDisplayConfiguration FOUND  /System/Library/PrivateFrameworks/SkyLight.framework/Versions/A/SkyLight
+dlsym SLSBeginDisplayConfiguration FOUND  /System/Library/PrivateFrameworks/SkyLight.framework/Versions/A/SkyLight
+dlsym SLSConfigureDisplayMirrored FOUND  /System/Library/PrivateFrameworks/SkyLight.framework/Versions/A/SkyLight
+dlsym SLSConfigureDisplayIndependentOutput FOUND  /System/Library/PrivateFrameworks/SkyLight.framework/Versions/A/SkyLight
+dlsym CGSGetDisplayList FOUND  /System/Library/PrivateFrameworks/SkyLight.framework/Versions/A/SkyLight
+dlsym SLSGetDisplayList FOUND  /System/Library/PrivateFrameworks/SkyLight.framework/Versions/A/SkyLight
+dlsym SLSGetOnlineDisplayList FOUND  /System/Library/PrivateFrameworks/SkyLight.framework/Versions/A/SkyLight
+dlsym CoreDisplay_DisplayCreateInfoDictionary FOUND  /System/Library/Frameworks/CoreDisplay.framework/Versions/A/CoreDisplay
+dlsym CGVirtualDisplaySettingsRefreshDeadlineNone FOUND  /System/Library/Frameworks/CoreGraphics.framework/Versions/A/CoreGraphics
+dlsym CGSDisplayIsVirtual MISSING  -
+dlsym SLSDisplayIsVirtual MISSING  -
+dlsym SLSIsDisplayVirtual MISSING  -
+dlsym CGSMainConnectionID FOUND  /System/Library/PrivateFrameworks/SkyLight.framework/Versions/A/SkyLight
+dlsym SLSMainConnectionID FOUND  /System/Library/PrivateFrameworks/SkyLight.framework/Versions/A/SkyLight
+CGVirtualDisplaySettingsRefreshDeadlineNone raw=0x0 asDouble=0.0
+
+image /System/Library/Frameworks/CoreGraphics.framework/Versions/A/CoreGraphics: 84 classes
+  VirtualDisplay/Sidecar classes: ["CGVirtualDisplay", "CGVirtualDisplayDescriptor", "CGVirtualDisplayMode", "CGVirtualDisplaySettings"]
+
+image /System/Library/PrivateFrameworks/SkyLight.framework/Versions/A/SkyLight: 303 classes
+  VirtualDisplay/Sidecar classes: ["SLVirtualDisplay", "SLVirtualDisplayCapabilities", "SLVirtualDisplayConfiguration", "SLVirtualDisplayMode", "SLVirtualDisplaySettings", "WSModernSidecarEventProcessor", "WSSidecar2HIDService", "WSSidecarQFAEventProcessor"]
+
+## CGVirtualDisplay : NSObject   [image: /System/Library/Frameworks/CoreGraphics.framework/Versions/A/CoreGraphics]
+  @property vendorID  [TI,R,N,V_vendorID]
+  @property productID  [TI,R,N,V_productID]
+  @property serialNumber  [TI,R,N,V_serialNumber]
+  @property serialNum  [TI,R,N]
+  @property name  [T@"NSString",R,N,V_name]
+  @property sizeInMillimeters  [T{CGSize=dd},R,N,V_sizeInMillimeters]
+  @property maxPixelsWide  [TI,R,N,V_maxPixelsWide]
+  @property maxPixelsHigh  [TI,R,N,V_maxPixelsHigh]
+  @property redPrimary  [T{CGPoint=dd},R,N,V_redPrimary]
+  @property greenPrimary  [T{CGPoint=dd},R,N,V_greenPrimary]
+  @property bluePrimary  [T{CGPoint=dd},R,N,V_bluePrimary]
+  @property whitePoint  [T{CGPoint=dd},R,N,V_whitePoint]
+  @property queue  [T@"NSObject<OS_dispatch_queue>",R,N,V_queue]
+  @property terminationHandler  [T@?,R,C,N,V_terminationHandler]
+  @property displayID  [TI,R,N,V_displayID]
+  @property hiDPI  [TI,R,N,V_hiDPI]
+  @property rotation  [TI,R,N,V_rotation]
+  @property modes  [T@"NSArray",R,N,V_modes]
+  ivar _vendorID I
+  ivar _productID I
+  ivar _serialNumber I
+  ivar _name @"NSString"
+  ivar _sizeInMillimeters {CGSize="width"d"height"d}
+  ivar _maxPixelsWide I
+  ivar _maxPixelsHigh I
+  ivar _redPrimary {CGPoint="x"d"y"d}
+  ivar _greenPrimary {CGPoint="x"d"y"d}
+  ivar _bluePrimary {CGPoint="x"d"y"d}
+  ivar _whitePoint {CGPoint="x"d"y"d}
+  ivar _queue @"NSObject<OS_dispatch_queue>"
+  ivar _terminationHandler @?
+  ivar _client ^v
+  ivar _displayID I
+  ivar _hiDPI I
+  ivar _rotation I
+  ivar _refreshDeadline d
+  ivar _isReference B
+  ivar _modes @"NSArray"
+  ivar _serverRPC_port I
+  ivar _proxyRPC_port I
+  ivar _clientHandler_port I
+  -applySettings:  B24@0:8@16
+  -bluePrimary  {CGPoint=dd}16@0:8
+  -dealloc  v16@0:8
+  -displayID  I16@0:8
+  -greenPrimary  {CGPoint=dd}16@0:8
+  -hiDPI  I16@0:8
+  -initWithDescriptor:  @24@0:8@16
+  -maxPixelsHigh  I16@0:8
+  -maxPixelsWide  I16@0:8
+  -modes  @16@0:8
+  -name  @16@0:8
+  -productID  I16@0:8
+  -queue  @16@0:8
+  -redPrimary  {CGPoint=dd}16@0:8
+  -rotation  I16@0:8
+  -serialNum  I16@0:8
+  -serialNumber  I16@0:8
+  -sizeInMillimeters  {CGSize=dd}16@0:8
+  -terminationHandler  @?16@0:8
+  -vendorID  I16@0:8
+  -whitePoint  {CGPoint=dd}16@0:8
+
+## CGVirtualDisplayDescriptor : NSObject   [image: /System/Library/Frameworks/CoreGraphics.framework/Versions/A/CoreGraphics]
+  @property displayInfo  [T@"NSDictionary",R,N]
+  @property vendorID  [TI,N]
+  @property productID  [TI,N]
+  @property serialNumber  [TI,N]
+  @property name  [T@"NSString",&,N,V_name]
+  @property sizeInMillimeters  [T{CGSize=dd},N,V_sizeInMillimeters]
+  @property maxPixelsWide  [TI,N,V_maxPixelsWide]
+  @property maxPixelsHigh  [TI,N,V_maxPixelsHigh]
+  @property redPrimary  [T{CGPoint=dd},N]
+  @property greenPrimary  [T{CGPoint=dd},N]
+  @property bluePrimary  [T{CGPoint=dd},N]
+  @property whitePoint  [T{CGPoint=dd},N]
+  @property queue  [T@"NSObject<OS_dispatch_queue>",&,N,V_queue]
+  @property terminationHandler  [T@?,C,N]
+  @property serialNum  [TI,N]
+  ivar _name @"NSString"
+  ivar _sizeInMillimeters {CGSize="width"d"height"d}
+  ivar _maxPixelsWide I
+  ivar _maxPixelsHigh I
+  ivar _queue @"NSObject<OS_dispatch_queue>"
+  ivar _terminationHandler @?
+  ivar _displayInfo @"NSMutableDictionary"
+  -bluePrimary  {CGPoint=dd}16@0:8
+  -dealloc  v16@0:8
+  -dispatchQueue  @16@0:8
+  -displayInfo  @16@0:8
+  -greenPrimary  {CGPoint=dd}16@0:8
+  -init  @16@0:8
+  -maxPixelsHigh  I16@0:8
+  -maxPixelsWide  I16@0:8
+  -name  @16@0:8
+  -productID  I16@0:8
+  -queue  @16@0:8
+  -redPrimary  {CGPoint=dd}16@0:8
+  -serialNum  I16@0:8
+  -serialNumber  I16@0:8
+  -setBluePrimary:  v32@0:8{CGPoint=dd}16
+  -setDispatchQueue:  v24@0:8@16
+  -setDisplayInfoValue:forKey:  v32@0:8@16@24
+  -setGreenPrimary:  v32@0:8{CGPoint=dd}16
+  -setMaxPixelsHigh:  v20@0:8I16
+  -setMaxPixelsWide:  v20@0:8I16
+  -setName:  v24@0:8@16
+  -setProductID:  v20@0:8I16
+  -setQueue:  v24@0:8@16
+  -setRedPrimary:  v32@0:8{CGPoint=dd}16
+  -setSerialNum:  v20@0:8I16
+  -setSerialNumber:  v20@0:8I16
+  -setSizeInMillimeters:  v32@0:8{CGSize=dd}16
+  -setTerminationHandler:  v24@0:8@?16
+  -setVendorID:  v20@0:8I16
+  -setWhitePoint:  v32@0:8{CGPoint=dd}16
+  -sizeInMillimeters  {CGSize=dd}16@0:8
+  -terminationHandler  @?16@0:8
+  -vendorID  I16@0:8
+  -whitePoint  {CGPoint=dd}16@0:8
+
+## CGVirtualDisplayMode : NSObject   [image: /System/Library/Frameworks/CoreGraphics.framework/Versions/A/CoreGraphics]
+  @property width  [TI,R,N,V_width]
+  @property height  [TI,R,N,V_height]
+  @property refreshRate  [Td,R,N,V_refreshRate]
+  ivar _width I
+  ivar _height I
+  ivar _refreshRate d
+  ivar _transferFunction I
+  -height  I16@0:8
+  -initWithWidth:height:refreshRate:  @32@0:8I16I20d24
+  -initWithWidth:height:refreshRate:transferFunction:  @36@0:8I16I20d24I32
+  -refreshRate  d16@0:8
+  -setTransferFunction:  v20@0:8I16
+  -transferFunction  I16@0:8
+  -width  I16@0:8
+
+## CGVirtualDisplaySettings : NSObject   [image: /System/Library/Frameworks/CoreGraphics.framework/Versions/A/CoreGraphics]
+  @property refreshDeadline  [Td,N]
+  @property isReference  [TB,N]
+  @property modes  [T@"NSArray",&,N]
+  @property hiDPI  [TI,N,V_hiDPI]
+  @property rotation  [TI,N,V_rotation]
+  ivar _modes @"NSArray"
+  ivar _hiDPI I
+  ivar _refreshDeadline d
+  ivar _isReference B
+  ivar _rotation I
+  -dealloc  v16@0:8
+  -hiDPI  I16@0:8
+  -init  @16@0:8
+  -isReference  B16@0:8
+  -modes  @16@0:8
+  -refreshDeadline  d16@0:8
+  -rotation  I16@0:8
+  -setHiDPI:  v20@0:8I16
+  -setIsReference:  v20@0:8B16
+  -setModes:  v24@0:8@16
+  -setRefreshDeadline:  v24@0:8d16
+  -setRotation:  v20@0:8I16
+
+## SLVirtualDisplay : NSObject   [image: /System/Library/PrivateFrameworks/SkyLight.framework/Versions/A/SkyLight]
+  @property displayID  [TI,R,N,V_displayID]
+  @property delegate  [T@"<SLVirtualDisplayDelegate>",W,N,V_delegate]
+  ivar _displayID I
+  ivar _delegate @"<SLVirtualDisplayDelegate>"
+  ivar _zeroWeakSelf @?
+  ivar _config @"SLVirtualDisplayConfiguration"
+  ivar _settings @"SLVirtualDisplaySettings"
+  -.cxx_destruct  v16@0:8
+  -applySettings:error:  B32@0:8@16^@24
+  -dealloc  v16@0:8
+  -delegate  @16@0:8
+  -destroy  v16@0:8
+  -displayID  I16@0:8
+  -init  @16@0:8
+  -initWithConfiguration:error:  @32@0:8@16^@24
+  -setDelegate:  v24@0:8@16
+  +capabilities  @16@0:8
+
+## SLVirtualDisplayCapabilities : NSObject   [image: /System/Library/PrivateFrameworks/SkyLight.framework/Versions/A/SkyLight]
+  @property maximumSizeInPixels  [T{?=II},R,N,V_maximumSizeInPixels]
+  @property maximumPixelsPerPoint  [T{?=ff},R,N,V_maximumPixelsPerPoint]
+  @property minimumPixelsPerPoint  [T{?=ff},R,N,V_minimumPixelsPerPoint]
+  @property minimumRefreshRate  [Tf,R,N,V_minimumRefreshRate]
+  ivar _maximumSizeInPixels {?="width"I"height"I}
+  ivar _maximumPixelsPerPoint {?="width"f"height"f}
+  ivar _minimumPixelsPerPoint {?="width"f"height"f}
+  ivar _minimumRefreshRate f
+  -dealloc  v16@0:8
+  -description  @16@0:8
+  -dictionaryRepresentation  @16@0:8
+  -init  @16@0:8
+  -maximumPixelsPerPoint  {?=ff}16@0:8
+  -maximumSizeInPixels  {?=II}16@0:8
+  -minimumPixelsPerPoint  {?=ff}16@0:8
+  -minimumRefreshRate  f16@0:8
+
+## SLVirtualDisplayConfiguration : NSObject   [image: /System/Library/PrivateFrameworks/SkyLight.framework/Versions/A/SkyLight]
+  @property type  [TQ,N,V_type]
+  @property options  [TQ,N,V_options]
+  @property subtype  [TQ,N,V_subtype]
+  @property uti  [T@"NSString",N,V_uti]
+  @property name  [T@"NSString",R,N,V_name]
+  @property vendorID  [TQ,R,N,V_vendorID]
+  @property productID  [TQ,R,N,V_productID]
+  @property serialNumber  [TQ,R,N,V_serialNumber]
+  @property sizeInMillimeters  [T{?=ff},R,N,V_sizeInMillimeters]
+  @property maximumSizeInPixels  [T{?=II},R,N,V_maximumSizeInPixels]
+  @property chromaticities  [T{?={?=ff}{?=ff}{?=ff}{?=ff}},R,N,V_chromaticities]
+  ivar _name @"NSString"
+  ivar _vendorID Q
+  ivar _productID Q
+  ivar _serialNumber Q
+  ivar _sizeInMillimeters {?="width"f"height"f}
+  ivar _maximumSizeInPixels {?="width"I"height"I}
+  ivar _chromaticities {?="red"{?="x"f"y"f}"green"{?="x"f"y"f}"blue"{?="x"f"y"f}"white"{?="x"f"y"f}}
+  ivar _type Q
+  ivar _options Q
+  ivar _subtype Q
+  ivar _uti @"NSString"
+  -chromaticities  {?={?=ff}{?=ff}{?=ff}{?=ff}}16@0:8
+  -dealloc  v16@0:8
+  -description  @16@0:8
+  -dictionaryRepresentation  @16@0:8
+  -init  @16@0:8
+  -initWithName:vendorID:productID:serialNumber:sizeInMillimeters:maximumSizeInPixels:chromaticities:error:  @104@0:8@16Q24Q32Q40{?=ff}48{?=II}56{?={?=ff}{?=ff}{?=ff}{?=ff}}64^@96
+  -maximumSizeInPixels  {?=II}16@0:8
+  -name  @16@0:8
+  -options  Q16@0:8
+  -productID  Q16@0:8
+  -serialNumber  Q16@0:8
+  -setOptions:  v24@0:8Q16
+  -setSubtype:  v24@0:8Q16
+  -setType:  v24@0:8Q16
+  -setUti:  v24@0:8@16
+  -sizeInMillimeters  {?=ff}16@0:8
+  -subtype  Q16@0:8
+  -type  Q16@0:8
+  -uti  @16@0:8
+  -vendorID  Q16@0:8
+  +configurationWithBackendOptions:  @24@0:8@16
+  +configurationWithDictionaryRepresentation:  @24@0:8@16
+  +configurationWithDisplayInfo:  @24@0:8@16
+
+## SLVirtualDisplayMode : NSObject   [image: /System/Library/PrivateFrameworks/SkyLight.framework/Versions/A/SkyLight]
+  @property refreshDeadline  [Td,N,V_refreshDeadline]
+  @property eotf  [TQ,N,V_eotf]
+  @property options  [TQ,N,V_options]
+  @property sizeInPixels  [T{?=II},R,N,V_sizeInPixels]
+  @property sizeInPoints  [T{?=II},R,N,V_sizeInPoints]
+  @property refreshRate  [Tf,R,N,V_refreshRate]
+  ivar _sizeInPixels {?="width"I"height"I}
+  ivar _sizeInPoints {?="width"I"height"I}
+  ivar _refreshRate f
+  ivar _refreshDeadline d
+  ivar _eotf Q
+  ivar _options Q
+  -dealloc  v16@0:8
+  -description  @16@0:8
+  -dictionaryRepresentation  @16@0:8
+  -eotf  Q16@0:8
+  -init  @16@0:8
+  -initWithSizeInPixels:sizeInPoints:refreshRate:error:  @44@0:8{?=II}16{?=II}24f32^@36
+  -isEqualToMode:  B24@0:8@16
+  -options  Q16@0:8
+  -refreshDeadline  d16@0:8
+  -refreshRate  f16@0:8
+  -setEotf:  v24@0:8Q16
+  -setOptions:  v24@0:8Q16
+  -setRefreshDeadline:  v24@0:8d16
+  -sizeInPixels  {?=II}16@0:8
+  -sizeInPoints  {?=II}16@0:8
+  +modeWithBackendMode:  @24@0:8@16
+  +modeWithDictionaryRepresentation:  @24@0:8@16
+
+## SLVirtualDisplaySettings : NSObject   [image: /System/Library/PrivateFrameworks/SkyLight.framework/Versions/A/SkyLight]
+  @property nativeMode  [T@"SLVirtualDisplayMode",R,N,V_nativeMode]
+  @property preferredMode  [T@"SLVirtualDisplayMode",R,N,V_preferredMode]
+  @property optionalModes  [T@"NSArray",R,N,V_optionalModes]
+  @property rotations  [TQ,R,N,V_rotations]
+  ivar _nativeMode @"SLVirtualDisplayMode"
+  ivar _preferredMode @"SLVirtualDisplayMode"
+  ivar _optionalModes @"NSArray"
+  ivar _rotations Q
+  -dealloc  v16@0:8
+  -description  @16@0:8
+  -dictionaryRepresentation  @16@0:8
+  -init  @16@0:8
+  -initWithNativeMode:preferredMode:optionalModes:rotations:error:  @56@0:8@16@24@32Q40^@48
+  -nativeMode  @16@0:8
+  -optionalModes  @16@0:8
+  -preferredMode  @16@0:8
+  -rotations  Q16@0:8
+  +settingsWithBackendSettings:  @24@0:8@16
+  +settingsWithDictionaryRepresentation:  @24@0:8@16

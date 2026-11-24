@@ -1,0 +1,41 @@
+Legend: [Mac✓] = verified on this Mac (27.0.1/26A434, Sidecar-400.42) via ObjC runtime, binary disassembly, getter-only calls, and logs of yesterday's real session. [Web] = online. Nothing was connected or reconfigured.
+
+1. Start/stop
+- [Mac✓] API unchanged: SidecarDisplayManager +sharedManager, +isSupported, devices, connectedDevices, recentDevices, connectToDevice:completion:, connectToDevice:withConfig:completion:, disconnectFromDevice:completion:. XPC to per-user LaunchAgent com.apple.sidecar-display-agent (gui/501). An ad-hoc-signed, entitlement-less CLI was accepted: isSupported=1, devices=0 (iPad absent). Agent has one entitlement check (key unidentified). Connect untested.
+- [Mac✓] SidecarDisplayConfig: transport (NSInteger), dataLink, size, scale, configureDisplayExclusiveMode, sidebar/TouchBar, hdr. Agent has a "switching to USB" path.
+- [Web, likely] SidecarLauncher: "Confirmed working on macOS Tahoe 26.5.1"; -wired = config transport=2 via withConfig (cable required, no Wi-Fi fallback); connect fails -203 when iPad locked/asleep. https://github.com/Ocasio-J/SidecarLauncher
+- [Web] BetterDisplay >=2.3.0: Sidecar connect/disconnect + CLI (Pro). https://newreleases.io/project/github/waydabber/BetterDisplay/release/v2.3.0 . Control Center UI scripting (https://github.com/kkk669/connect-sidecar) is fragile; no Shortcuts action found.
+
+2. Detection
+- [Mac✓, WindowServer log] Sidecar display is a CGVirtualDisplay: vendor 0x6161706C ('aapl'), product 0x69506164 ('iPad'), ProductName = localized "Sidecar Display", extra key SidecarDeviceTypeIdentifier=com.apple.ipad-air5-1; no IOKit framebuffer (likely). NSScreen name likely "Sidecar Display".
+- [Mac✓] Darwin notify user.uid.<uid>.com.apple.sidecar-display-agent.connection-generation (state = agentPID<<32 | counter, bumps on connect/close); ...sidecar-relay.device-generation for devices. In-process NSNotifications: SidecarDisplayManagerConnectedDevicesChangedNotification, SidecarDevicesChangedNotification. No client delegate. CGDisplayRegisterReconfigurationCallback applies too (likely).
+
+3. Only/main display
+- [Mac✓, disassembly] On display changes the agent enumerates online displays; if Sidecar is "the last online display" and not exclusive, it runs a teardown path (likely: session drops). Exclusive mode (Vision Pro Mac Virtual Display style) skips this, but the exclusiveMode defaults override is gated by os_variant_has_internal_ui -> ignored on retail. Client-set configureDisplayExclusiveMode untested; your session logged "Is not SideCar exclusive request".
+- [Web, anecdotal] Disconnecting the last other display: "macOS drops the SideCar connection" https://github.com/waydabber/BetterDisplay/discussions/4265 ; headless setups keep a virtual main display https://github.com/wberry9813/SideLinker
+- [Mac✓] Agent is a GUI-session LaunchAgent -> likely no Sidecar at login window/FileVault (also https://forums.macrumors.com/threads/does-sidecar-support-login-screen-aka-headless-mac.2186624); disconnects on logout; code paths: display sleep -> "Display Sleep: Disconnecting", wake -> "Reconnecting".
+- [Mac✓] Yesterday's session ended after 2h05m: RTCP timeout (-401) -> one auto-reconnect -> -1010 protocol error -> gave up. [Web, anecdotal] iPad auto-lock causes drops.
+
+4. Resolution
+- [Mac✓] The iPad sends the modes each session; the agent caches them as strings ("Saved 5 display mode strings"), so editing the plist changes nothing. CG modes: 1321x918 (default), 1373x954, 1539x1070, 1165x809, 1030x716; HiDPI 2x, 60 Hz, max 3078x2140 px, aspect = panel's 1.439. Default renders 2642x1836 px, scaled to 2360x1640. Rotation mode 0.
+- [Likely] CGConfigureDisplayWithDisplayMode works; config size/scale unverified.
+
+5. New in 26/27
+- [Web] macOS 27 adds finger touch for Sidecar (https://www.macrumors.com/2026/06/09/macos-27-brings-direct-touch-control-to-sidecar/); [Mac✓] touch-digitizer setup ran in my session. No portrait rotation (https://developer.apple.com/forums/thread/847630). 26.x anecdotal -201 timeouts (https://developer.apple.com/forums/thread/850713). [Mac✓] frameworks not renamed.
+
+Recommended approach
+- Swift LaunchAgent in the GUI session; dlopen SidecarCore; pick device by identifier (= plist recents UUID); connect with retry/backoff on device-generation; transport=2 when cabled.
+- Detect via vendor/product (or SidecarDeviceTypeIdentifier) + connection-generation notify.
+- Never remove the last non-Sidecar display: keep a tiny CGVirtualDisplay anchor (or mirror physicals into Sidecar), then disable physicals session-only (SLSConfigureDisplayEnabled/CGSConfigureDisplayEnabled exist [Mac✓]) and make Sidecar main via CGConfigureDisplayOrigin(0,0).
+- Dead-man switch: re-enable physicals on Sidecar loss, crash or timeout.
+
+Spike tests (on site)
+1. iPad awake: connect over Wi-Fi, then transport=2; log stream --predicate 'subsystem == "com.apple.sidecar"'.
+2. Run displays.m while connected: vendor/product, kCGDisplayIsVirtualDevice, name, 5 modes.
+3. Cycle modes; make Sidecar main.
+4. Disable physicals with 60-s auto-revert, with/without anchor or mirroring; watch "last online display".
+5. Connect with configureDisplayExclusiveMode=@YES; watch physicals and lock-on-close.
+6. pmset displaysleepnow, iPad lock, out of range, cable pull.
+7. Logout/reboot: physicals return.
+
+Scripts: listdevices.m (getters only), displays.m and introspect.m in this folder.
